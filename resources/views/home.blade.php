@@ -3,31 +3,49 @@
 @section('page_title', 'Главная')
 
 @section('content')
-    <div id="main">
+    <div class="container">
+        <div class="products__title">
+            <div>
+                <h2>Все подарки</h2>
+            </div>
+            <div>
+                <form id="search" method="get" action="/">
+                    <input type="text" name="query" placeholder="Search"/>
+                </form>
+            </div>
+        </div>
+        <div class="products__wrapper">
 
-        @if(count($products))
+            @if(count($products))
 
-            @foreach($products as $product)
-                <!-- Post -->
-                <article class="post">
-                    <header>
-                        <div class="title">
-                            <h2><a href="{{ route('product.single', $product) }}">{{ $product->title }}</a></h2>
-                            <p>{{ $product->description }}</p>
+                @foreach($products as $product)
+                    <div class="product">
+                        <div class="header">
+                            <p class="price">{{ $product->price }} ₽</p>
+                            <a href="{{ route('product.single', $product) }}">
+                                <img src="{{ $product->image_url }}" alt="{{ $product->title }}">
+                            </a>
                         </div>
-                    </header>
+                        <div class="footer">
+                            <a href="{{ route('product.single', $product) }}">
+                                <p>
+                                    {{ $product->title }}
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
 
-                    <a href="single.html" class="image featured">
-                        <img src="{{ $product->image_url }}" alt="product_img"/>
-                    </a>
+            @else
+                <h3>По вашему запросу ничего найдено</h3>
+            @endif
+        </div>
 
-                    <p>{{ $product->price }}</p>
-                </article>
-            @endforeach
-
-        @else
-            <h2>На данный момент постов нет!</h2>
-        @endif
+        {{ $products->links('components.paginate') }}
 
     </div>
 @endsection
+
+
+{{-- осталось: слайдер, рег, автор, страница админки --}}
+

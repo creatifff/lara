@@ -9,7 +9,10 @@
     <title>@yield('page_title')</title>
 </head>
 <body>
-    @include('components.header')
-    @yield('content')
+    <div class="wrapper">
+        @include('components.header')
+        @yield('content')
+        @include('components.footer')
+    </div>
 </body>
 </html>
