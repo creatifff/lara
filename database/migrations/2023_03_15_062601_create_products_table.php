@@ -14,8 +14,8 @@ return new class extends Migration
             $table->string('title', 80);
             $table->string('description');
             $table->integer('price')->default(0);
-            $table->string('image_path', 255)->nullable()->default('public/images/product-default.png');
-            $table->boolean('is_published')->default(false);
+            $table->string('image_path', 255)->nullable()->default('public/images/default-img.jpg');
+            $table->boolean('is_published')->default(true);
             $table->timestamps();
         });
     }

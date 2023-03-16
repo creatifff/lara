@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+    public function single(Product $product)
+    {
+        return view('single', $product);
+    }
+
     public function delete(Product $product)
     {
         $product->delete();
@@ -26,8 +31,8 @@ class ProductController extends Controller
 
         $validated['author_id'] = Auth::user()->getAuthIdentifier();
 
-        $product = Product::query()->create($validated);
-        return redirect()->route('product.single', $product->id);
+        Product::query()->create($validated);
+        return redirect()->route('home');
     }
 
     public function update(Product $product, ProductUpdateRequest $request)
@@ -39,14 +44,16 @@ class ProductController extends Controller
         }
 
         $product->update($validated);
-        return redirect()->route('product.single', $product->id);
+        return redirect()->route('home', $product->id);
     }
 
-    public function createForm() {
+    public function createForm()
+    {
         return view('products.create');
     }
 
-    public function updateForm(Product $product) {
+    public function updateForm(Product $product)
+    {
         return view('products.update', compact('product'));
     }
 }

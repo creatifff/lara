@@ -3,7 +3,7 @@
 @section('page_title', 'Авторизация')
 
 @section('content')
-    <section class="auth">
+    <section class="main">
         <div class="container">
             <form action="{{ route('auth.signin') }}" method="post" enctype="multipart/form-data">
                 @csrf

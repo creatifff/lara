@@ -3,7 +3,7 @@
 @section('page_title', 'Регистрация')
 
 @section('content')
-    <section class="auth">
+    <section class="main">
         <div class="container">
             <form action="{{ route('auth.signup') }}" method="post" enctype="multipart/form-data">
                 @csrf

@@ -23,7 +23,7 @@
                 </a>
             @endguest
             @auth
-                <a href="">{{ Auth::user()->username }}</a>
+                <a href="/">{{ Auth::user()->username }}</a>
                 <a href="{{ route('auth.logout') }}">Выход</a>
             @endauth
         </div>

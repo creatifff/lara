@@ -8,6 +8,7 @@ body {
 .wrapper {
     background-color: #fff;
     border-radius: 20px 20px 0 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
 }
 
 *,
@@ -81,6 +82,29 @@ header .buttons a {
     text-transform: uppercase;
 }
 
+/* Slider */
+
+.swiper {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.swiper-wrapper {
+    border-radius: 20px;
+}
+
+.swiper-slide {
+    border-radius: 20px;
+}
+
+.slider__image {
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+
+
 
 /* Catalog */
 
@@ -90,6 +114,13 @@ header .buttons a {
     align-items: center;
     justify-content: space-between;
     margin-top: 40px;
+}
+
+.products__title a {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #206da0;
+    color: #fff;
 }
 
 .products__title h2 {
@@ -110,6 +141,15 @@ header .buttons a {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 40px 0;
+}
+
+.admin-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 /*.products__wrapper h2 {}*/
@@ -141,6 +181,8 @@ header .buttons a {
 .product .header img {
     width: 100%;
     border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .product .footer p {
@@ -204,13 +246,13 @@ footer {
     align-items: center;
 }
 
-/*  Auth section */
+/*  Main section */
 
-.auth {
+.main {
     padding: 40px 0;
 }
 
-.auth form {
+.main form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -218,7 +260,7 @@ footer {
     margin: 0 auto;
 }
 
-.auth form .form-group {
+.main form .form-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
