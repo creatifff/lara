@@ -18,6 +18,7 @@ class Product extends Model
         'is_published',
     ];
 
+    // Получение пути картинки
     public function getImageUrlAttribute() {
         return url(Storage::url($this->image_path));
     }

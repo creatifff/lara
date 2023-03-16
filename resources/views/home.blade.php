@@ -10,7 +10,8 @@
             </div>
             <div>
                 <form id="search" method="get" action="/">
-                    <input type="text" name="query" placeholder="Search"/>
+                    <label for="query"></label>
+                    <input id="query" type="text" name="query" placeholder="Поиск"/>
                 </form>
             </div>
         </div>
